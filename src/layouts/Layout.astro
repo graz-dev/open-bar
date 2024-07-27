@@ -1,0 +1,62 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar.astro";
+import "@fontsource-variable/inter/index.css";
+import '@fontsource-variable/bricolage-grotesque';
+import openbar from "../data/openbar.json"
+
+export interface Props {
+  title: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  openbar.general.logo,
+  Astro.site
+).toString();
+
+const { title } = Astro.props;
+
+const computedTitle = title
+  ? title + " | " + openbar.general.title
+  : openbar.general.title;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={openbar.general.logo} />
+    <meta name="generator" content={Astro.generator} />
+
+    <SEO
+      title={computedTitle}
+      description={openbar.general.description}
+      canonical={canonicalURL}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: openbar.general.title,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: openbar.general.title,
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>

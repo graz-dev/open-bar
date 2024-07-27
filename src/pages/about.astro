@@ -1,0 +1,60 @@
+---
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import openbar from "../data/openbar.json"
+
+// Filter team entries with 'draft: false' & date before current date
+const team = [
+  {
+    img: "https://placehold.co/600x400",
+    name: "Giulia Meroni",
+    title: "Barman",
+  },
+  {
+    img: "https://placehold.co/600x400",
+    name: "Filippo Meroni",
+    title: "Pasticcere",
+  },
+  {
+    img: "https://placehold.co/600x400",
+    name: "Simona Bargigia",
+    title: "Manager",
+  },
+];
+---
+
+<Layout title={openbar.about.title}>
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{openbar.about.title}</Fragment>
+      <Fragment slot="desc"
+        >{openbar.about.description}</Fragment
+      >
+    </Sectionhead>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        openbar.about.team.map((member) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={member.img}
+                alt={member.name}
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">{member.name}</h2>
+              <h3 class="text-sm text-slate-500">{member.title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

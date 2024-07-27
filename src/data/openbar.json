@@ -1,0 +1,262 @@
+{
+  "general": {
+    "url": "https://openbar.dev",
+    "logo": "/logo.png",
+    "title": "OpenBar.dev",
+    "description": "OpenBar.dev is the project that will allow you to start promoting your restaurant business online easily and practically for free.",
+    "copyright": "OpenBar.dev"
+  },
+  "navigation": {
+    "titleDark": "OpenBar",
+    "titleLight": ".dev",
+    "menuItems": [
+      {
+        "title": "About us",
+        "href": "/about"
+      },
+      {
+        "title": "Gallery",
+        "href": "/gallery"
+      }
+    ],
+    "actionItems": {
+      "left": {
+        "title": "Book a table",
+        "href": "/booking"
+      },
+      "right": {
+        "title": "Craft your cake",
+        "href": "/order"
+      }
+    }
+  },
+  "home": {
+    "title": "Home",
+    "hero": {
+      "title": "Your new website made easy.",
+      "description": "OpenBar.dev is the project that will allow you to start promoting your restaurant business online easily and practically for free.",
+      "action": {
+        "href": "",
+        "icon": "bx:last-page",
+        "text": "Get Started"
+      }
+    },
+    "sliders": {
+      "first": [
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        }
+      ],
+      "second": [
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        },
+        {
+          "src": "https://placehold.co/600x400",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://placehold.co/400x400",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://placehold.co/500x400",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://placehold.co/700x400",
+          "alt": "Image 4"
+        }
+      ]
+    },
+    "callToActions": {
+      "booking": {
+        "title": "Come visit us.",
+        "text": "Book a table for your breakfast, snack, or aperitif. We look forward to seeing you!",
+        "href": "/booking",
+        "linkText": "Book your table"
+      },
+      "order": {
+        "title": "Create your custom cake.",
+        "text": "We create custom cakes for your events. Tell us your idea, and we'll take care of the rest!",
+        "href": "/order",
+        "linkText": "Oreder your cake."
+      }
+    },
+    "features": {
+      "title": "",
+      "description": "",
+      "features": [
+        {
+          "title": "Artisanal Ice Cream",
+          "description": "We offer our customers a wide selection of artisanal ice cream flavors."
+        },
+        {
+          "title": "Aperitifs",
+          "description": "Every day from 5:00 PM onwards, come enjoy a good cocktail served with our selection of snacks."
+        },
+        {
+          "title": "Pastries",
+          "description": "Come and try our artisanal pastries: a huge variety is ready to welcome you at our counter."
+        },
+        {
+          "title": "Coffee Shop",
+          "description": "Not the usual coffee. For your breakfasts or coffee breaks, treat yourself to the best."
+        },
+        {
+          "title": "Cakes & Sweets to Order",
+          "description": "A special event needs a special cake. Trust us, and we will design your next cake together."
+        },
+        {
+          "title": "Gluten-Free",
+          "description": "Everyone deserves a bit of BarG, so we have come up with gluten-free options."
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Know our dream team.",
+    "team": [
+      {
+        "img": "https://placehold.co/600x400",
+        "name": "First Person",
+        "title": "Person Role"
+      },
+      {
+        "img": "https://placehold.co/600x400",
+        "name": "Second Person",
+        "title": "Person Role"
+      },
+      {
+        "img": "https://placehold.co/600x400",
+        "name": "Third Person",
+        "title": "Person Role"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "description": "Discover our product thanks to the images is our amazing gallery.",
+    "items": [
+      { "src": "https://placehold.co/600x400", "alt": "Image 1" },
+      { "src": "https://placehold.co/400x400", "alt": "Image 2" },
+      { "src": "https://placehold.co/500x400", "alt": "Image 3" },
+      { "src": "https://placehold.co/700x400", "alt": "Image 4" },
+      { "src": "https://placehold.co/600x400", "alt": "Image 1" },
+      { "src": "https://placehold.co/400x400", "alt": "Image 2" },
+      { "src": "https://placehold.co/500x400", "alt": "Image 3" },
+      { "src": "https://placehold.co/700x400", "alt": "Image 4" },
+      { "src": "https://placehold.co/600x400", "alt": "Image 1" },
+      { "src": "https://placehold.co/400x400", "alt": "Image 2" },
+      { "src": "https://placehold.co/500x400", "alt": "Image 3" },
+      { "src": "https://placehold.co/700x400", "alt": "Image 4" }
+    ]
+  }
+}

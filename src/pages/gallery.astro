@@ -1,0 +1,142 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import openbar from "../data/openbar.json"
+
+---
+
+<Layout title="Gallery">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">{openbar.gallery.title}</Fragment>
+      <Fragment slot="desc">{openbar.gallery.description}</Fragment>
+    </Sectionhead>
+
+    <div id="gallery" class="masonry-grid mt-8">
+      {openbar.gallery.items.map((image, index) => (
+        <div class="masonry-item" data-index={index} key={index}>
+          <img src={image.src} alt={image.alt} class="cursor-pointer" />
+        </div>
+      ))}
+    </div>
+
+    <div id="lightbox" class="lightbox hidden">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      <button class="lightbox-prev" onclick="prevImage()">‹</button>
+      <img id="lightbox-image" src="" alt="" class="lightbox-image" />
+      <button class="lightbox-next" onclick="nextImage()">›</button>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .masonry-grid {
+    column-count: 4;
+    column-gap: 4px;
+  }
+
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .lightbox.hidden {
+    display: none;
+  }
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+  }
+
+  .lightbox-prev {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-next {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = Array.from(document.querySelectorAll('.masonry-item img'));
+    let currentIndex = -1;
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = index;
+        openLightbox(item);
+      });
+    });
+
+    function openLightbox(image) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightbox.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      openLightbox(galleryItems[currentIndex]);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightbox(galleryItems[currentIndex]);
+    }
+
+    window.closeLightbox = closeLightbox;
+    window.nextImage = nextImage;
+    window.prevImage = prevImage;
+  });
+</script>

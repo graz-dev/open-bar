@@ -1,0 +1,50 @@
+---
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import openbar from "../data/openbar.json"
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="text-lg"
+          ><span class="font-bold text-slate-800">{openbar.navigation.titleDark}</span><span
+            class="text-slate-500">{openbar.navigation.titleLight}</span
+          >
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            openbar.navigation.menuItems.map((item, index) => (
+              <>
+                  <li>
+                    <a
+                      href={item.href}
+                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      <span> {item.title}</span>
+                    </a>
+                  </li>
+              </>
+            ))
+          }
+        </ul>
+        <div class="lg:hidden flex items-center mt-3 gap-4">
+          <Link href={openbar.navigation.actionItems.left.href} style="muted" block size="md">{openbar.navigation.actionItems.left.title}</Link>
+          <Link href={openbar.navigation.actionItems.right.href} size="md" block>{openbar.navigation.actionItems.right.title}e</Link>
+        </div>
+      </MenuItems>
+    </Astronav>
+    <div>
+      <div class="hidden lg:flex items-center gap-4">
+        <a href={openbar.navigation.actionItems.left.href}>{openbar.navigation.actionItems.left.title}</a>
+        <Link href={openbar.navigation.actionItems.right.href} size="md">{openbar.navigation.actionItems.right.title}</Link>
+      </div>
+    </div>
+  </header>
+</Container>

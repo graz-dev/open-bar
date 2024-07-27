@@ -1,0 +1,20 @@
+---
+import Container from "@components/container.astro";
+import Cta from "@components/cta.astro";
+import Features from "@components/features.astro";
+import Hero from "@components/hero.astro";
+import Layout from "@layouts/Layout.astro";
+import Slider from "@components/slider.astro";
+import openbar from "../data/openbar.json";
+---
+
+<Layout title={openbar.home.title}>
+  <Container>
+    <Hero hero={openbar.home.hero} />
+    <Slider gallery={openbar.home.sliders.first} />
+    <Cta cta={openbar.home.callToActions.booking} />
+    <Features page={openbar.home.features}/>
+    <Slider gallery={openbar.home.sliders.second} />
+    <Cta cta={openbar.home.callToActions.order} />
+  </Container>
+</Layout>

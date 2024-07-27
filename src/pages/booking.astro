@@ -1,0 +1,243 @@
+---
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Layout from "@layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import Button from "../components/ui/button.astro";
+---
+
+<Layout title="Contact">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Prenota un tavolo</Fragment>
+      <Fragment slot="desc">Prenota un tavolo per il tuo aperitivo, la tua colazione o la tua merenda.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">BarG Pasticceria ti aspetta!</h2>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+         Ti aspettiamo per colazione, merenda o per un aperitivo. Prenota un tavolo e vieni a trovarci!
+        </p>
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:map-marker" />
+            <span>Via G. Garibaldi 12, Agnadello, Italy 26020</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:clock" />
+            <span>Dal Lunedì alla Domenica dalle 08:00 alle 20:00</span>
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:ordini@barg-pasticceria.com"
+              >ordini@barg-pasticceria.com</a
+            >
+          </div>
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon class="text-gray-400 w-4 h-4" name="uil:phone" /><a
+              href="tel:+1 (987) 4587 899">+0363 101077</a
+            >
+          </div>
+        </div>
+      </div>
+      <div>
+        <form id="form" class="needs-validation" novalidate>
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Nome"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="nome"
+            />
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Ci serve il tuo nome per la prenotazione!
+            </div>
+          </div>
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Cognome"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="cognome"
+            />
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Ci serve il tuo cognome per la prenotazione!
+            </div>
+          </div>
+          <div class="mb-5">
+            <input
+              type="text"
+              placeholder="Numero Persone"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="numero_persone"
+            />
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Ci serve sapere in quanti sarete per la prenotazione!
+            </div>
+          </div>
+          <div class="mb-5">
+            <label for="data" class="block mb-2">Data di prenotazione</label>
+            <input
+              type="date"
+              id="data"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="data"
+            />
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Ci serve sapere quando aspettarti per la prenotazione!
+            </div>
+          </div>
+          <div class="mb-5">
+            <label for="ora" class="block mb-2">Ora di prenotazione</label>
+            <input
+              type="time"
+              id="ora"
+              required
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="ora"
+            />
+            <div
+              class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              Ci serve sapere quando arrivi per la prenotazione!
+            </div>
+          </div>
+          <div class="mb-5">
+            <input
+              type="tel"
+              placeholder="Cellulare"
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="cellulare"
+            />
+          </div>
+          <div class="mb-5">
+            <input
+              type="email"
+              placeholder="Email"
+              class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
+              name="email"
+            />
+          </div>
+          <div class="mb-5">
+            <div class="flex items-center">
+              <input type="checkbox" id="no_lattosio" name="no_lattosio" value="SI" class="mr-2">
+              <label for="no_lattosio" class="text-gray-800">Intolleranti al lattosio</label>
+            </div>
+          </div>
+          <div class="mb-5">
+            <div class="flex items-center">
+              <input type="checkbox" id="no_glutine" name="no_glutine" value="SI" class="mr-2">
+              <label for="no_glutine" class="text-gray-800">Intolleranti al glutine</label>
+            </div>
+          </div>
+          <input type="hidden" name="data_ordine" />
+          <input type="hidden" name="stato" value="DA CONFERMARE" />
+          <input type="hidden" name="request_type" value="BOOKING" />
+          <Button type="submit" size="lg" block>Invia Prenotazione</Button>
+          <div id="result" class="mt-3 text-center"></div>
+        </form>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .invalid-feedback,
+  .empty-feedback {
+    display: none;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+  const dateInput = document.getElementById("data");
+
+  // Imposta la data minima per il campo data al giorno successivo a quello corrente
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const day = String(tomorrow.getDate()).padStart(2, '0');
+  const month = String(tomorrow.getMonth() + 1).padStart(2, '0'); // I mesi sono indicizzati da 0
+  const year = tomorrow.getFullYear();
+  const minDate = `${year}-${month}-${day}`;
+  dateInput.min = minDate;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    
+    const cellulare = form.querySelector('input[name="cellulare"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+
+    if (!cellulare && !email) {
+      result.classList.add("text-red-500");
+      result.innerHTML = "Ci serve il tuo numero o la tua mail per contattarti!";
+      return;
+    }
+
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+
+    const now = new Date();
+    const data_ordine = now.toISOString();
+    form.querySelector('input[name="data_ordine"]').value = data_ordine;
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Invio richiesta...";
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyOp9dW7QQslnYughq8ym0mOqjTNFGeMS1QAR-L0R5_IBruHMqc-JpG1YR8RL-ISxU2hA/exec",
+      {
+        method: "POST",
+        mode: "cors",
+        redirect: "follow",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: json,
+      }
+    )
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = "Abbiamo preso in carico la tua richiesta. Ti contatteremo per la conferma via e-mail o cellulare.";
+        } else {
+          result.classList.add("text-red-500");
+          result.innerHTML = "La richiesta non è andata a buon fine: riprovare o chiamare il numero XXXXX";
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.classList.add("text-red-500");
+        result.innerHTML = "La richiesta non è andata a buon fine: riprovare o chiamare il numero XXXXX";
+      });
+  });
+</script>
